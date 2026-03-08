@@ -4,314 +4,387 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Baba Jaga – Pizzeria & Ogródek Piwny | Rzuchów</title>
-    <meta name="description" content="Baba Jaga - Pizzeria & Ogródek Piwny w Rzuchowie. Świeża pizza, burgery, piwo i ogródek piwny. Zamów na dowóz! Tel: 790 354 138">
+    <meta name="description" content="Baba Jaga - Pizzeria & Ogródek Piwny w Rzuchowie. Świeża pizza, burgery, piwo. Zamów na dowóz: 790 354 138">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- LOADING SCREEN -->
+    <div class="loader" id="loader">
+        <div class="loader-pizza">
+            <img src="pizza_circle.png" alt="" class="loader-pizza-img">
+        </div>
+        <div class="loader-text">Baba Jaga</div>
+    </div>
 
     <!-- NAV -->
     <nav class="navbar" id="navbar">
         <div class="nav-inner">
-            <a href="#hero" class="nav-logo">
-                <img src="logo.png" alt="Baba Jaga" class="nav-logo-img">
-            </a>
-            <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
+            <a href="#hero" class="nav-logo"><img src="logo_transparent.png" alt="Baba Jaga" class="nav-logo-img"></a>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#o-nas">O nas</a></li>
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#galeria">Galeria</a></li>
                 <li><a href="#aktualnosci">Facebook</a></li>
                 <li><a href="#kontakt">Kontakt</a></li>
-                <li><a href="tel:+48790354138" class="nav-cta">📞 Zamów dowóz</a></li>
+                <li><a href="tel:+48790354138" class="nav-cta">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Zamów
+                </a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- ════════════ HERO ════════════ -->
     <section class="hero" id="hero">
-        <div class="hero-texture"></div>
-        <div class="hero-overlay"></div>
-        <svg class="hero-chalk hero-chalk--pizza" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="90" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
-            <circle cx="100" cy="100" r="80" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
-            <circle cx="60" cy="70" r="12" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"/>
-            <circle cx="130" cy="60" r="8" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"/>
-            <circle cx="110" cy="120" r="10" stroke="rgba(255,255,255,0.05)" stroke-width="1.5"/>
-            <line x1="100" y1="10" x2="60" y2="190" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-            <line x1="100" y1="10" x2="140" y2="190" stroke="rgba(255,255,255,0.03)" stroke-width="1"/>
-        </svg>
+        <div class="hero-bg"></div>
+        <!-- Decorative chalk elements -->
+        <img src="chalk_pizza.png" alt="" class="hero-deco hero-deco--chalk-pizza" aria-hidden="true">
+        <img src="chalk_slice.png" alt="" class="hero-deco hero-deco--chalk-slice" aria-hidden="true">
+
         <div class="hero-content">
-            <img src="logo.png" alt="Baba Jaga" class="hero-logo">
-            <div class="hero-divider">
-                <span class="hero-divider-line"></span>
-                <span class="hero-divider-text">PIZZERIA & OGRÓDEK PIWNY</span>
-                <span class="hero-divider-line"></span>
+            <div class="hero-left">
+                <img src="logo_transparent.png" alt="Baba Jaga" class="hero-logo anim-slide-right">
+                <div class="hero-divider anim-fade" data-delay="0.4">
+                    <span class="line"></span>
+                    <span class="txt">PIZZERIA & OGRÓDEK PIWNY</span>
+                    <span class="line"></span>
+                </div>
+                <p class="hero-sub anim-slide-up" data-delay="0.6">
+                    <svg class="icon-inline" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    Rzuchów · ul. Pstrążka 25
+                </p>
+                <div class="hero-btns anim-slide-up" data-delay="0.8">
+                    <a href="tel:+48790354138" class="btn btn-accent">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        Zamów na dowóz
+                    </a>
+                    <a href="#menu" class="btn btn-outline-light">Zobacz menu</a>
+                </div>
             </div>
-            <p class="hero-location">📍 Rzuchów · ul. Pstrążka 25</p>
-            <div class="hero-actions">
-                <a href="tel:+48790354138" class="btn btn-primary"><span class="btn-icon">📞</span> Zamów na dowóz</a>
-                <a href="#menu" class="btn btn-ghost">Zobacz menu ↓</a>
+            <div class="hero-right">
+                <div class="pizza-spin-wrap anim-pizza-enter">
+                    <img src="pizza_circle.png" alt="Pizza Baba Jaga" class="pizza-spin">
+                    <div class="pizza-glow"></div>
+                </div>
             </div>
         </div>
-        <div class="hero-scroll-hint"><div class="scroll-line"></div></div>
+        <div class="hero-scroll"><div class="scroll-dot"></div></div>
     </section>
 
-    <!-- O NAS -->
+    <!-- ════════════ O NAS ════════════ -->
     <section class="section" id="o-nas">
-        <div class="section-texture"></div>
+        <div class="section-bg"></div>
+        <img src="chalk_mushroom.png" alt="" class="section-deco section-deco--mushroom" aria-hidden="true">
         <div class="container">
-            <div class="about-layout">
-                <div class="about-left">
-                    <h2 class="chalk-heading">O nas</h2>
-                    <div class="chalk-underline"></div>
-                    <p class="about-text"><strong>Baba Jaga</strong> to pizzeria z duszą w sercu Rzuchowa. Serwujemy świeżą, wypiekaną na miejscu pizzę, soczyste burgery oraz klasyczne polskie fast-foody. Nasz ogródek piwny to idealne miejsce na relaks przy zimnym piwie w ciepłe wieczory.</p>
-                    <p class="about-text">Zapraszamy na ul. Pstrążka 25 — lub zamów na dowóz dzwoniąc pod <a href="tel:+48790354138" class="text-link">790 354 138</a>.</p>
-                    <div class="about-badges">
-                        <div class="badge"><span class="badge-icon">⭐</span><div><span class="badge-big">5.0</span><span class="badge-label">Ocena Google</span></div></div>
-                        <div class="badge"><span class="badge-icon">💬</span><div><span class="badge-big">995+</span><span class="badge-label">Opinii</span></div></div>
-                        <div class="badge"><span class="badge-icon">🍕</span><div><span class="badge-big">12</span><span class="badge-label">Rodzajów pizzy</span></div></div>
+            <div class="about-grid">
+                <div class="about-text-col reveal-left">
+                    <div class="section-label">
+                        <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        O nas
+                    </div>
+                    <h2 class="heading-lg">Pizzeria z <em>duszą</em></h2>
+                    <p class="body-text"><strong>Baba Jaga</strong> to miejsce, gdzie tradycyjna pizza spotyka się z nowoczesnym smakiem. Nasz ogródek piwny to idealne miejsce na spotkanie ze znajomymi przy zimnym piwie i gorącej, świeżo wypiekanej pizzy.</p>
+                    <p class="body-text">Zapraszamy na ul. Pstrążka 25 w Rzuchowie — lub zamów na dowóz dzwoniąc pod <a href="tel:+48790354138" class="link-accent">790 354 138</a>.</p>
+                    <div class="stats-row">
+                        <div class="stat">
+                            <svg class="icon-stat" viewBox="0 0 24 24" fill="none" stroke="#e8b445" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            <span class="stat-val">5.0</span>
+                            <span class="stat-lbl">Google</span>
+                        </div>
+                        <div class="stat">
+                            <svg class="icon-stat" viewBox="0 0 24 24" fill="none" stroke="#e8b445" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span class="stat-val">995+</span>
+                            <span class="stat-lbl">Opinii</span>
+                        </div>
+                        <div class="stat">
+                            <svg class="icon-stat" viewBox="0 0 24 24" fill="none" stroke="#e8b445" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2-6 2 6-2 6-2-6z"/><path d="M12 8l6 2-6 2-6-2 6-2z"/></svg>
+                            <span class="stat-val">12</span>
+                            <span class="stat-lbl">Pizz</span>
+                        </div>
                     </div>
                 </div>
-                <div class="about-right">
-                    <div class="about-img-frame"><img src="banner.png" alt="Baba Jaga - Już otwarte!" class="about-img"></div>
-                    <div class="about-features">
-                        <div class="feat">🍕 Świeża pizza 32cm</div>
-                        <div class="feat">🍔 Soczyste burgery</div>
-                        <div class="feat">🍺 Ogródek piwny</div>
-                        <div class="feat">🚗 Dowóz pod drzwi</div>
+                <div class="about-img-col reveal-right">
+                    <div class="about-img-wrap">
+                        <img src="banner.png" alt="Baba Jaga - Już otwarte!" class="about-hero-img">
+                        <div class="img-accent-border"></div>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feat-card">
+                            <svg class="feat-icon" viewBox="0 0 40 40" fill="none" stroke="#e8b445" stroke-width="1.5"><circle cx="20" cy="20" r="16"/><circle cx="14" cy="16" r="3"/><circle cx="26" cy="14" r="2"/><circle cx="20" cy="24" r="2.5"/><path d="M20 4 L14 36" stroke-opacity="0.3"/><path d="M20 4 L26 36" stroke-opacity="0.3"/></svg>
+                            <span>Świeża pizza 32cm</span>
+                        </div>
+                        <div class="feat-card">
+                            <svg class="feat-icon" viewBox="0 0 40 40" fill="none" stroke="#e8b445" stroke-width="1.5"><path d="M8 22h24"/><path d="M10 18 Q20 8 30 18"/><path d="M10 22 Q20 30 30 22"/><circle cx="20" cy="14" r="1" fill="#e8b445"/></svg>
+                            <span>Soczyste burgery</span>
+                        </div>
+                        <div class="feat-card">
+                            <svg class="feat-icon" viewBox="0 0 40 40" fill="none" stroke="#e8b445" stroke-width="1.5"><path d="M12 34 L12 12 Q12 6 20 6 Q28 6 28 12 L28 34"/><line x1="12" y1="34" x2="28" y2="34"/><path d="M16 12 Q16 16 20 18 Q24 16 24 12" stroke-opacity="0.4"/></svg>
+                            <span>Ogródek piwny</span>
+                        </div>
+                        <div class="feat-card">
+                            <svg class="feat-icon" viewBox="0 0 40 40" fill="none" stroke="#e8b445" stroke-width="1.5"><rect x="6" y="16" width="28" height="14" rx="3"/><circle cx="14" cy="33" r="3"/><circle cx="26" cy="33" r="3"/><path d="M6 20h28"/><path d="M34 20 L38 14 H30" stroke-opacity="0.6"/></svg>
+                            <span>Dowóz pod drzwi</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MENU -->
+    <!-- ════════════ MENU ════════════ -->
     <section class="section section--dark" id="menu">
-        <div class="section-texture"></div>
+        <div class="section-bg section-bg--dark"></div>
+        <img src="chalk_pizza.png" alt="" class="section-deco section-deco--menu-pizza" aria-hidden="true">
+        <img src="chalk_slice.png" alt="" class="section-deco section-deco--menu-slice" aria-hidden="true">
         <div class="container">
-            <div class="menu-header">
-                <img src="logo.png" alt="Baba Jaga" class="menu-logo">
-                <h2 class="chalk-heading chalk-heading--white">Nasze Menu</h2>
-                <div class="chalk-underline chalk-underline--white"></div>
+            <div class="menu-top reveal-up">
+                <img src="logo_transparent.png" alt="Baba Jaga" class="menu-logo-sm">
+                <div class="section-label section-label--light">
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    Nasze menu
+                </div>
+                <h2 class="heading-lg heading-lg--light">Sprawdź co <em>oferujemy</em></h2>
             </div>
 
-            <div class="menu-tabs">
-                <button class="tab active" data-tab="pizza">🍕 Pizza</button>
-                <button class="tab" data-tab="burgery">🍔 Burgery</button>
-                <button class="tab" data-tab="fastfood">🌭 Fast-Food</button>
-                <button class="tab" data-tab="napoje">🍺 Napoje</button>
-                <button class="tab" data-tab="desery">☕ Kawa & Desery</button>
+            <div class="menu-tabs reveal-up">
+                <button class="tab active" data-tab="pizza">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><circle cx="9" cy="9" r="2"/><circle cx="15" cy="11" r="1.5"/><circle cx="11" cy="15" r="1.5"/><path d="M12 2 L8 22" stroke-opacity="0.3"/><path d="M12 2 L16 22" stroke-opacity="0.3"/></svg>
+                    Pizza
+                </button>
+                <button class="tab" data-tab="burgery">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 13h16"/><path d="M5 10 Q12 3 19 10"/><path d="M5 13 Q12 19 19 13"/></svg>
+                    Burgery
+                </button>
+                <button class="tab" data-tab="fastfood">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="6" y="8" width="12" height="12" rx="1"/><path d="M6 12h12"/><path d="M10 4v4"/><path d="M14 4v4"/></svg>
+                    Fast-Food
+                </button>
+                <button class="tab" data-tab="napoje">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 22h8"/><path d="M12 15v7"/><path d="M5 2l1 7h12l1-7"/><path d="M6 9a6 6 0 0 0 12 0"/></svg>
+                    Napoje
+                </button>
+                <button class="tab" data-tab="desery">
+                    <svg class="tab-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    Kawa & Desery
+                </button>
             </div>
 
             <!-- PIZZA -->
-            <div class="tab-content active" id="tab-pizza">
-                <div class="menu-section-label">PIZZA – 32 cm</div>
-                <div class="menu-two-col">
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">1. Wegetariańska</span><span class="menu-dots"></span><span class="menu-price">35 zł</span></div><p class="menu-desc">pieczarki, pomidor, ser, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">2. Peperoni</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">peperoni, salami, ser, cebula, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">3. Brokuł</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">brokuł, szynka, ser, pieczarki, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">4. Gyros</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">gyros, cebula, pomidor, ser, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">5. Wiejska</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">kiełbasa, boczek, cebula czerwona, ogórek, ser, kukurydza, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">6. Cztery sery</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">mozzarella, feta, parmezan, gorgonzola, sos pomidorowy</p></div>
+            <div class="tab-panel active" id="tab-pizza">
+                <div class="menu-cat-label">PIZZA – 32 cm</div>
+                <div class="menu-grid-2col">
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">1. Wegetariańska</span><span class="mdots"></span><span class="mprice">35 zł</span></div><p class="mdesc">pieczarki, pomidor, ser, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">2. Peperoni</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">peperoni, salami, ser, cebula, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">3. Brokuł</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">brokuł, szynka, ser, pieczarki, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">4. Gyros</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">gyros, cebula, pomidor, ser, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">5. Wiejska</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">kiełbasa, boczek, cebula czerwona, ogórek, ser, kukurydza, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">6. Cztery sery</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">mozzarella, feta, parmezan, gorgonzola, sos pomidorowy</p></div>
                     </div>
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">7. Specjal</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">pieczarki, pomidor, cebula, papryka, szynka, ser, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">8. Margherita</span><span class="menu-dots"></span><span class="menu-price">30 zł</span></div><p class="menu-desc">mozzarella, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">9. Hawaii</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">szynka, kukurydza, ananas, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">10. Tuńczyk</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">tuńczyk, cebula, rukola, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">11. Góralska</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">mozzarella, ser wędzony, boczek wędzony, suszona żurawina, sos pomidorowy</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">12. Własny wybór</span><span class="menu-dots"></span><span class="menu-price">38 zł</span></div><p class="menu-desc">skomponuj swoją pizzę z ulubionych składników</p></div>
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">7. Specjal</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">pieczarki, pomidor, cebula, papryka, szynka, ser, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">8. Margherita</span><span class="mdots"></span><span class="mprice">30 zł</span></div><p class="mdesc">mozzarella, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">9. Hawaii</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">szynka, kukurydza, ananas, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">10. Tuńczyk</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">tuńczyk, cebula, rukola, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">11. Góralska</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">mozzarella, ser wędzony, boczek wędzony, suszona żurawina, sos pomidorowy</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">12. Własny wybór</span><span class="mdots"></span><span class="mprice">38 zł</span></div><p class="mdesc">skomponuj swoją pizzę z ulubionych składników</p></div>
                     </div>
                 </div>
-                <div class="menu-bottom-row">
-                    <div class="menu-sauces">
-                        <h4 class="sauce-title">SOS</h4>
-                        <div class="sauce-item">Meksykański <span class="menu-price--sm">2,50 zł</span></div>
-                        <div class="sauce-item">Czosnkowy <span class="menu-price--sm">2,50 zł</span></div>
-                        <div class="sauce-item">Ketchup <span class="menu-price--sm">2,50 zł</span></div>
-                    </div>
-                    <div class="menu-chalk-art">
-                        <svg viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg" class="chalk-pizza-svg">
-                            <circle cx="120" cy="120" r="105" stroke="rgba(255,255,255,0.8)" stroke-width="2.5" stroke-dasharray="2 1"/>
-                            <circle cx="120" cy="120" r="95" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
-                            <circle cx="120" cy="120" r="100" stroke="rgba(255,255,255,0.25)" stroke-width="8" stroke-dasharray="4 6"/>
-                            <ellipse cx="80" cy="85" rx="14" ry="10" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
-                            <line x1="80" y1="75" x2="80" y2="68" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
-                            <ellipse cx="155" cy="95" rx="11" ry="8" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
-                            <line x1="155" y1="87" x2="155" y2="81" stroke="rgba(255,255,255,0.55)" stroke-width="1.5"/>
-                            <circle cx="105" cy="140" r="8" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
-                            <circle cx="105" cy="140" r="3" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-                            <circle cx="140" cy="150" r="7" stroke="rgba(255,255,255,0.65)" stroke-width="1.5"/>
-                            <circle cx="140" cy="150" r="2.5" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
-                            <path d="M90 115 Q100 105 110 115" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none"/>
-                            <path d="M130 120 Q138 112 145 122" stroke="rgba(255,255,255,0.55)" stroke-width="1.5" fill="none"/>
-                            <circle cx="120" cy="80" r="10" stroke="rgba(255,255,255,0.6)" stroke-width="1.5"/>
-                            <circle cx="120" cy="80" r="6" stroke="rgba(255,255,255,0.35)" stroke-width="1"/>
-                            <line x1="120" y1="15" x2="120" y2="225" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-                            <line x1="15" y1="120" x2="225" y2="120" stroke="rgba(255,255,255,0.12)" stroke-width="0.8"/>
-                            <line x1="42" y1="42" x2="198" y2="198" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
-                            <line x1="198" y1="42" x2="42" y2="198" stroke="rgba(255,255,255,0.09)" stroke-width="0.8"/>
-                            <path d="M160 130 Q165 125 170 130 Q165 135 160 130Z" stroke="rgba(255,255,255,0.55)" stroke-width="1" fill="rgba(255,255,255,0.08)"/>
-                            <path d="M75 105 Q80 100 85 105 Q80 110 75 105Z" stroke="rgba(255,255,255,0.55)" stroke-width="1" fill="rgba(255,255,255,0.08)"/>
-                        </svg>
-                    </div>
+                <div class="sauce-bar">
+                    <span class="sauce-title">SOSY:</span>
+                    <span class="sauce">Meksykański <b>2,50 zł</b></span>
+                    <span class="sauce-dot">·</span>
+                    <span class="sauce">Czosnkowy <b>2,50 zł</b></span>
+                    <span class="sauce-dot">·</span>
+                    <span class="sauce">Ketchup <b>2,50 zł</b></span>
                 </div>
             </div>
 
             <!-- BURGERY -->
-            <div class="tab-content" id="tab-burgery">
-                <div class="menu-section-label">BURGERY</div>
-                <div class="menu-two-col">
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">1. Klasyczny</span><span class="menu-dots"></span><span class="menu-price">31 zł</span></div><p class="menu-desc">wołowina 200 g, cebula czerwona, pikle, sałatka, musztarda, ketchup</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">2. Szefa</span><span class="menu-dots"></span><span class="menu-price">34 zł</span></div><p class="menu-desc">wołowina 200 g, panierowany ser, sałatka, pikle, czerwona cebula, pomidor, sos BBQ</p></div>
+            <div class="tab-panel" id="tab-burgery">
+                <div class="menu-cat-label">BURGERY</div>
+                <div class="menu-grid-2col">
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">1. Klasyczny</span><span class="mdots"></span><span class="mprice">31 zł</span></div><p class="mdesc">wołowina 200g, cebula czerwona, pikle, sałatka, musztarda, ketchup</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">2. Szefa</span><span class="mdots"></span><span class="mprice">34 zł</span></div><p class="mdesc">wołowina 200g, panierowany ser, sałatka, pikle, czerwona cebula, pomidor, sos BBQ</p></div>
                     </div>
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">3. Specjal</span><span class="menu-dots"></span><span class="menu-price">32 zł</span></div><p class="menu-desc">wołowina 200 g, krążki cebulowe, bekon, ser, pikle, pomidor, sos, sałata</p></div>
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">3. Specjal</span><span class="mdots"></span><span class="mprice">32 zł</span></div><p class="mdesc">wołowina 200g, krążki cebulowe, bekon, ser, pikle, pomidor, sos, sałata</p></div>
                     </div>
                 </div>
             </div>
 
             <!-- FAST-FOOD -->
-            <div class="tab-content" id="tab-fastfood">
-                <div class="menu-section-label">FAST-FOOD</div>
-                <div class="menu-two-col">
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">1. Zapiekanka z pieczarkami</span><span class="menu-dots"></span><span class="menu-price">15 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">2. Hot Dog z PRL-u</span><span class="menu-dots"></span><span class="menu-price">15 zł</span></div><p class="menu-desc">z pieczarkami, boczkiem i cebulką</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">3. Nuggetsy</span><span class="menu-dots"></span><span class="menu-price">15 zł</span></div></div>
+            <div class="tab-panel" id="tab-fastfood">
+                <div class="menu-cat-label">FAST-FOOD</div>
+                <div class="menu-grid-2col">
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">1. Zapiekanka z pieczarkami</span><span class="mdots"></span><span class="mprice">15 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">2. Hot Dog z PRL-u</span><span class="mdots"></span><span class="mprice">15 zł</span></div><p class="mdesc">z pieczarkami, boczkiem i cebulką</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">3. Nuggetsy</span><span class="mdots"></span><span class="mprice">15 zł</span></div></div>
                     </div>
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">4. Frytki 100 g</span><span class="menu-dots"></span><span class="menu-price">10 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">5. Ziemniaczki 100 g</span><span class="menu-dots"></span><span class="menu-price">10 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">6. Krążki cebulowe</span><span class="menu-dots"></span><span class="menu-price">10 zł</span></div></div>
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">4. Frytki 100g</span><span class="mdots"></span><span class="mprice">10 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">5. Ziemniaczki 100g</span><span class="mdots"></span><span class="mprice">10 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">6. Krążki cebulowe</span><span class="mdots"></span><span class="mprice">10 zł</span></div></div>
                     </div>
                 </div>
             </div>
 
             <!-- NAPOJE -->
-            <div class="tab-content" id="tab-napoje">
-                <div class="menu-section-label">NAPOJE</div>
-                <div class="menu-two-col">
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">1. Piwo lane</span><span class="menu-dots"></span><span class="menu-price">12 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">2. Piwo butelkowe</span><span class="menu-dots"></span><span class="menu-price">11 zł</span></div><p class="menu-desc">sok do piwa +1 zł</p></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">3. Woda mineralna</span><span class="menu-dots"></span><span class="menu-price">4 zł</span></div></div>
+            <div class="tab-panel" id="tab-napoje">
+                <div class="menu-cat-label">NAPOJE</div>
+                <div class="menu-grid-2col">
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">1. Piwo lane</span><span class="mdots"></span><span class="mprice">12 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">2. Piwo butelkowe</span><span class="mdots"></span><span class="mprice">11 zł</span></div><p class="mdesc">sok do piwa +1 zł</p></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">3. Woda mineralna</span><span class="mdots"></span><span class="mprice">4 zł</span></div></div>
                     </div>
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">4. Napoje</span><span class="menu-dots"></span><span class="menu-price">7 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">5. Soki</span><span class="menu-dots"></span><span class="menu-price">7 zł</span></div></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- KAWA & DESERY -->
-            <div class="tab-content" id="tab-desery">
-                <div class="menu-section-label">KAWA & DESERY</div>
-                <div class="menu-two-col">
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">1. Deser lodowy</span><span class="menu-dots"></span><span class="menu-price">19 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">2. Kawa mrożona</span><span class="menu-dots"></span><span class="menu-price">16 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">3. Kawa parzona</span><span class="menu-dots"></span><span class="menu-price">9 zł</span></div></div>
-                    </div>
-                    <div class="menu-col">
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">4. Herbata zwykła</span><span class="menu-dots"></span><span class="menu-price">7 zł</span></div></div>
-                        <div class="menu-row"><div class="menu-row-top"><span class="menu-name">5. Herbata zimowa</span><span class="menu-dots"></span><span class="menu-price">10 zł</span></div></div>
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">4. Napoje</span><span class="mdots"></span><span class="mprice">7 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">5. Soki</span><span class="mdots"></span><span class="mprice">7 zł</span></div></div>
                     </div>
                 </div>
             </div>
 
-            <div class="menu-footer-note">Opakowanie na wynos: <strong>2 zł</strong></div>
+            <!-- DESERY -->
+            <div class="tab-panel" id="tab-desery">
+                <div class="menu-cat-label">KAWA & DESERY</div>
+                <div class="menu-grid-2col">
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">1. Deser lodowy</span><span class="mdots"></span><span class="mprice">19 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">2. Kawa mrożona</span><span class="mdots"></span><span class="mprice">16 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">3. Kawa parzona</span><span class="mdots"></span><span class="mprice">9 zł</span></div></div>
+                    </div>
+                    <div class="mcol">
+                        <div class="mitem"><div class="mitem-top"><span class="mname">4. Herbata zwykła</span><span class="mdots"></span><span class="mprice">7 zł</span></div></div>
+                        <div class="mitem"><div class="mitem-top"><span class="mname">5. Herbata zimowa</span><span class="mdots"></span><span class="mprice">10 zł</span></div></div>
+                    </div>
+                </div>
+            </div>
 
-            <div class="menu-original">
-                <h3 class="chalk-heading chalk-heading--white chalk-heading--sm">Nasze karty menu</h3>
+            <p class="pack-note">Opakowanie na wynos: <b>2 zł</b></p>
+
+            <!-- Oryginalne karty menu -->
+            <div class="menu-cards-section reveal-up">
+                <h3 class="heading-md heading-md--light">Nasze karty menu</h3>
                 <div class="menu-cards">
-                    <div class="menu-card"><img src="menu1.png" alt="Menu Pizza - Baba Jaga" loading="lazy"></div>
-                    <div class="menu-card"><img src="menu2.png" alt="Menu Fast-Food, Burgery, Napoje - Baba Jaga" loading="lazy"></div>
+                    <div class="menu-card"><img src="menu1.png" alt="Menu Pizza" loading="lazy"></div>
+                    <div class="menu-card"><img src="menu2.png" alt="Menu Fast-Food i Burgery" loading="lazy"></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- GALERIA -->
+    <!-- ════════════ GALERIA ════════════ -->
     <section class="section" id="galeria">
-        <div class="section-texture"></div>
+        <div class="section-bg"></div>
         <div class="container">
-            <h2 class="chalk-heading">Galeria</h2>
-            <div class="chalk-underline"></div>
-            <div class="gallery">
-                <div class="gallery-main"><img src="banner.png" alt="Pizza Baba Jaga" loading="lazy"><div class="gallery-caption">Świeża pizza prosto z pieca 🍕</div></div>
-                <div class="gallery-side">
-                    <div class="gallery-thumb"><img src="logo.png" alt="Logo Baba Jaga" loading="lazy"></div>
-                    <div class="gallery-thumb"><img src="menu1.png" alt="Karta menu" loading="lazy"></div>
+            <div class="section-label reveal-up">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                Galeria
+            </div>
+            <h2 class="heading-lg reveal-up">Nasze <em>wnętrze</em></h2>
+            <div class="gallery-grid">
+                <div class="gallery-big reveal-left">
+                    <img src="banner.png" alt="Baba Jaga pizza" loading="lazy">
+                    <div class="gallery-overlay"><span>Świeża pizza prosto z pieca</span></div>
+                </div>
+                <div class="gallery-sm reveal-right" style="transition-delay: 0.1s">
+                    <img src="pizza_circle.png" alt="Pizza" loading="lazy">
+                </div>
+                <div class="gallery-sm reveal-right" style="transition-delay: 0.2s">
+                    <img src="logo.png" alt="Logo Baba Jaga" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FACEBOOK -->
+    <!-- ════════════ FACEBOOK ════════════ -->
     <section class="section section--dark" id="aktualnosci">
-        <div class="section-texture"></div>
+        <div class="section-bg section-bg--dark"></div>
         <div class="container">
-            <h2 class="chalk-heading chalk-heading--white">Aktualności</h2>
-            <div class="chalk-underline chalk-underline--white"></div>
-            <p class="section-subtitle">Śledź nas na Facebooku — bądź na bieżąco z promocjami!</p>
+            <div class="section-label section-label--light reveal-up">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                Aktualności
+            </div>
+            <h2 class="heading-lg heading-lg--light reveal-up">Śledź nas na <em>Facebooku</em></h2>
+
             <div class="fb-grid">
-                <div class="fb-post">
-                    <div class="fb-head"><img src="logo.png" alt="" class="fb-avatar"><div><strong>Baba Jaga - Pizzeria & Ogródek Piwny</strong><span>Najnowszy post</span></div></div>
-                    <p class="fb-body">🍕 Zapraszamy na świeżą pizzę! Nowe godziny otwarcia — czwartek i piątek od 16:00 do 21:00, sobota i niedziela od 16:00 do 21:30. Do zobaczenia!</p>
-                    <div class="fb-image"><img src="banner.png" alt="Post Baba Jaga" loading="lazy"></div>
-                    <div class="fb-actions"><span>👍 Lubię to!</span><span>💬 Komentarz</span><span>↗ Udostępnij</span></div>
+                <div class="fb-card reveal-left">
+                    <div class="fb-head"><img src="logo.png" alt="" class="fb-ava"><div><strong>Baba Jaga - Pizzeria & Ogródek Piwny</strong><span>Najnowszy post</span></div></div>
+                    <p class="fb-body">Zapraszamy na świeżą pizzę! Czwartek i piątek od 16:00 do 21:00, sobota i niedziela od 16:00 do 21:30. Do zobaczenia!</p>
+                    <div class="fb-img"><img src="banner.png" alt="" loading="lazy"></div>
+                    <div class="fb-foot"><span>Lubię to!</span><span>Komentarz</span><span>Udostępnij</span></div>
                 </div>
-                <div class="fb-post">
-                    <div class="fb-head"><img src="logo.png" alt="" class="fb-avatar"><div><strong>Baba Jaga - Pizzeria & Ogródek Piwny</strong><span>Poprzedni post</span></div></div>
-                    <p class="fb-body">🎉 JUŻ OTWARTE! Zapraszamy do naszej pizzerii w Rzuchowie! Ul. Pstrążka 25. Zamów na dowóz: 790 354 138 📞</p>
-                    <div class="fb-actions"><span>👍 Lubię to!</span><span>💬 Komentarz</span><span>↗ Udostępnij</span></div>
+                <div class="fb-card reveal-right">
+                    <div class="fb-head"><img src="logo.png" alt="" class="fb-ava"><div><strong>Baba Jaga - Pizzeria & Ogródek Piwny</strong><span>Poprzedni post</span></div></div>
+                    <p class="fb-body">JUŻ OTWARTE! Zapraszamy do naszej pizzerii w Rzuchowie! Ul. Pstrążka 25. Zamów na dowóz: 790 354 138</p>
+                    <div class="fb-foot"><span>Lubię to!</span><span>Komentarz</span><span>Udostępnij</span></div>
                 </div>
             </div>
-            <div class="fb-link">
+            <div class="center-block reveal-up">
                 <a href="https://www.facebook.com/" target="_blank" rel="noopener" class="btn btn-fb">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    <svg class="icon-sm" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                     Odwiedź nas na Facebooku
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- KONTAKT -->
+    <!-- ════════════ KONTAKT ════════════ -->
     <section class="section" id="kontakt">
-        <div class="section-texture"></div>
+        <div class="section-bg"></div>
+        <img src="chalk_slice.png" alt="" class="section-deco section-deco--contact-slice" aria-hidden="true">
         <div class="container">
-            <h2 class="chalk-heading">Kontakt</h2>
-            <div class="chalk-underline"></div>
-            <div class="contact-layout">
-                <div class="contact-info">
-                    <div class="contact-block"><div class="contact-icon">📍</div><div><h4>Adres</h4><p>ul. Pstrążka 25<br>44-285 Rzuchów</p></div></div>
-                    <div class="contact-block"><div class="contact-icon">📞</div><div><h4>Telefon</h4><p><a href="tel:+48790354138">790 354 138</a></p><p><a href="tel:+48506999330">506 999 330</a></p></div></div>
-                    <div class="contact-block"><div class="contact-icon">🚗</div><div><h4>Zamów na dowóz!</h4><p>Zadzwoń i zamów świeżą pizzę prosto pod drzwi.</p></div></div>
+            <div class="section-label reveal-up">
+                <svg class="icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                Kontakt
+            </div>
+            <h2 class="heading-lg reveal-up">Odwiedź <em>nas</em></h2>
+
+            <div class="contact-grid">
+                <div class="contact-col reveal-left">
+                    <div class="c-block">
+                        <div class="c-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        </div>
+                        <div><h4>Adres</h4><p>ul. Pstrążka 25<br>44-285 Rzuchów</p></div>
+                    </div>
+                    <div class="c-block">
+                        <div class="c-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.11 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </div>
+                        <div><h4>Telefon</h4><p><a href="tel:+48790354138">790 354 138</a><br><a href="tel:+48506999330">506 999 330</a></p></div>
+                    </div>
+                    <div class="c-block">
+                        <div class="c-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="22" height="18" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7.5 3v4"/><path d="M16.5 3v4"/></svg>
+                        </div>
+                        <div><h4>Dowóz</h4><p>Zadzwoń i zamów pizzę prosto pod drzwi!</p></div>
+                    </div>
                 </div>
-                <div class="hours-card">
+                <div class="hours-panel reveal-right">
                     <h3 class="hours-title">Godziny otwarcia</h3>
                     <div class="hours-list">
-                        <div class="hours-row closed"><span>Poniedziałek</span><span class="closed-badge">Nieczynne</span></div>
-                        <div class="hours-row closed"><span>Wtorek</span><span class="closed-badge">Nieczynne</span></div>
-                        <div class="hours-row closed"><span>Środa</span><span class="closed-badge">Nieczynne</span></div>
-                        <div class="hours-row" data-day="4"><span>Czwartek</span><span>16:00 – 21:00</span></div>
-                        <div class="hours-row" data-day="5"><span>Piątek</span><span>16:00 – 21:00</span></div>
-                        <div class="hours-row" data-day="6"><span>Sobota</span><span>16:00 – 21:30</span></div>
-                        <div class="hours-row" data-day="0"><span>Niedziela</span><span>16:00 – 21:30</span></div>
+                        <div class="h-row closed"><span>Poniedziałek</span><span class="h-closed">Nieczynne</span></div>
+                        <div class="h-row closed"><span>Wtorek</span><span class="h-closed">Nieczynne</span></div>
+                        <div class="h-row closed"><span>Środa</span><span class="h-closed">Nieczynne</span></div>
+                        <div class="h-row" data-day="4"><span>Czwartek</span><span>16:00 – 21:00</span></div>
+                        <div class="h-row" data-day="5"><span>Piątek</span><span>16:00 – 21:00</span></div>
+                        <div class="h-row" data-day="6"><span>Sobota</span><span>16:00 – 21:30</span></div>
+                        <div class="h-row" data-day="0"><span>Niedziela</span><span>16:00 – 21:30</span></div>
                     </div>
-                    <div class="hours-status" id="openStatus"></div>
+                    <div class="h-status" id="openStatus"></div>
                 </div>
             </div>
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.0!2d18.47!3d50.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUHN0csOFxbxrYSAyNSwgNDQtMjg1IFJ6dWNow7N3!5e0!3m2!1spl!2spl!4v1234567890" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa – Baba Jaga Rzuchów"></iframe>
+
+            <div class="map-wrap reveal-up">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2557.0!2d18.47!3d50.21!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zUHN0csOFxbxrYSAyNSwgNDQtMjg1IFJ6dWNow7N3!5e0!3m2!1spl!2spl!4v1234567890" width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" title="Mapa Baba Jaga"></iframe>
             </div>
         </div>
     </section>
@@ -320,13 +393,13 @@
     <footer class="footer">
         <div class="footer-texture"></div>
         <div class="container">
-            <div class="footer-inner">
-                <div class="footer-brand"><img src="logo.png" alt="Baba Jaga" class="footer-logo"><p>Pizzeria & Ogródek Piwny<br>Rzuchów</p></div>
-                <div class="footer-col"><h4>Nawigacja</h4><a href="#o-nas">O nas</a><a href="#menu">Menu</a><a href="#galeria">Galeria</a><a href="#aktualnosci">Facebook</a><a href="#kontakt">Kontakt</a></div>
-                <div class="footer-col"><h4>Kontakt</h4><a href="tel:+48790354138">📞 790 354 138</a><a href="tel:+48506999330">📞 506 999 330</a><a href="https://www.facebook.com/" target="_blank" rel="noopener">📘 Facebook</a></div>
-                <div class="footer-col"><h4>Adres</h4><p>ul. Pstrążka 25<br>44-285 Rzuchów<br>Polska</p></div>
+            <div class="footer-grid">
+                <div class="footer-brand"><img src="logo_transparent.png" alt="Baba Jaga" class="footer-logo"><p>Pizzeria & Ogródek Piwny · Rzuchów</p></div>
+                <div class="footer-col"><h4>Menu</h4><a href="#o-nas">O nas</a><a href="#menu">Menu</a><a href="#galeria">Galeria</a><a href="#aktualnosci">Facebook</a><a href="#kontakt">Kontakt</a></div>
+                <div class="footer-col"><h4>Kontakt</h4><a href="tel:+48790354138">790 354 138</a><a href="tel:+48506999330">506 999 330</a></div>
+                <div class="footer-col"><h4>Adres</h4><p>ul. Pstrążka 25<br>44-285 Rzuchów</p></div>
             </div>
-            <div class="footer-bottom"><p>&copy; 2025 Baba Jaga – Pizzeria & Ogródek Piwny. Wszelkie prawa zastrzeżone.</p></div>
+            <div class="footer-bottom"><p>&copy; 2025 Baba Jaga – Wszelkie prawa zastrzeżone.</p></div>
         </div>
     </footer>
 

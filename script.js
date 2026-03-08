@@ -1,13 +1,26 @@
 /* ============================================
-   BABA JAGA – Pizzeria & Ogródek Piwny
-   JavaScript
+   BABA JAGA – Advanced JavaScript
+   Loading screen, scroll reveals, stagger
+   animations, open/closed status
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // ─── NAVBAR SCROLL ───
-    const navbar = document.getElementById('navbar');
+    // ─── LOADING SCREEN ───
+    const loader = document.getElementById('loader');
+    window.addEventListener('load', () => {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+            document.body.style.overflow = '';
+        }, 1800);
+    });
+    // Fallback in case load already fired
+    if (document.readyState === 'complete') {
+        setTimeout(() => loader.classList.add('hidden'), 1800);
+    }
 
+    // ─── NAVBAR ───
+    const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         navbar.classList.toggle('scrolled', window.pageYOffset > 60);
     });
@@ -32,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ─── MENU TABS ───
     const tabs = document.querySelectorAll('.tab');
-    const panels = document.querySelectorAll('.tab-content');
+    const panels = document.querySelectorAll('.tab-panel');
 
     tabs.forEach(tab => {
         tab.addEventListener('click', () => {
@@ -41,33 +54,64 @@ document.addEventListener('DOMContentLoaded', () => {
             tab.classList.add('active');
             panels.forEach(p => {
                 p.classList.remove('active');
-                if (p.id === `tab-${target}`) p.classList.add('active');
+                if (p.id === `tab-${target}`) {
+                    p.classList.add('active');
+                    // Animate menu items in new panel
+                    animateMenuItems(p);
+                }
             });
         });
     });
 
     // ─── SCROLL REVEAL ───
-    const revealSelectors = [
-        '.chalk-heading', '.chalk-underline', '.about-text', '.about-badges',
-        '.about-img-frame', '.about-features', '.menu-header', '.menu-tabs',
-        '.tab-content', '.gallery-main', '.gallery-thumb', '.fb-post',
-        '.contact-block', '.hours-card', '.map-container', '.menu-original',
-        '.menu-footer-note', '.fb-link', '.feat', '.badge'
-    ];
+    const revealEls = document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right');
 
-    const revealEls = document.querySelectorAll(revealSelectors.join(', '));
-    revealEls.forEach(el => el.classList.add('reveal'));
-
-    const observer = new IntersectionObserver((entries) => {
+    const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
+                revealObserver.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-    revealEls.forEach(el => observer.observe(el));
+    revealEls.forEach(el => revealObserver.observe(el));
+
+    // ─── STAGGERED MENU ITEMS ───
+    function animateMenuItems(container) {
+        const items = container.querySelectorAll('.mitem');
+        items.forEach((item, i) => {
+            item.classList.remove('visible');
+            item.style.transitionDelay = `${i * 0.05}s`;
+            // Trigger reflow
+            void item.offsetWidth;
+            setTimeout(() => item.classList.add('visible'), 20);
+        });
+    }
+
+    // Initial animation for active panel
+    const menuSection = document.getElementById('menu');
+    const menuObserver = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            const activePanel = document.querySelector('.tab-panel.active');
+            if (activePanel) animateMenuItems(activePanel);
+            menuObserver.disconnect();
+        }
+    }, { threshold: 0.1 });
+    if (menuSection) menuObserver.observe(menuSection);
+
+    // ─── PARALLAX DECORATIONS ───
+    const decoElements = document.querySelectorAll('.hero-deco, .section-deco');
+    window.addEventListener('scroll', () => {
+        const scrollY = window.pageYOffset;
+        decoElements.forEach(el => {
+            const speed = 0.03;
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                el.style.transform = `translateY(${scrollY * speed}px) ${el.style.transform?.replace(/translateY\([^)]+\)/, '') || ''}`;
+            }
+        });
+    }, { passive: true });
 
     // ─── OPEN/CLOSED STATUS ───
     const updateStatus = () => {
@@ -85,20 +129,19 @@ document.addEventListener('DOMContentLoaded', () => {
         };
 
         // Highlight today
-        document.querySelectorAll('.hours-row[data-day]').forEach(row => {
+        document.querySelectorAll('.h-row[data-day]').forEach(row => {
             if (parseInt(row.dataset.day) === day) row.classList.add('today');
         });
 
         const today = schedule[day];
         if (today && time >= today.open && time < today.close) {
-            statusEl.textContent = '🟢 Teraz otwarte!';
-            statusEl.className = 'hours-status open';
+            statusEl.innerHTML = '<span style="font-size:1.1em">●</span> Teraz otwarte!';
+            statusEl.className = 'h-status open';
         } else {
-            statusEl.className = 'hours-status closed';
+            statusEl.className = 'h-status closed';
             const dayNames = ['niedzielę', 'poniedziałek', 'wtorek', 'środę', 'czwartek', 'piątek', 'sobotę'];
-            let msg = '🔴 Aktualnie zamknięte';
+            let msg = '<span style="font-size:1.1em">●</span> Aktualnie zamknięte';
 
-            // Check if opens later today
             if (today && time < today.open) {
                 msg += ` · Otwieramy dziś o ${today.open}:00`;
             } else {
@@ -110,10 +153,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 }
             }
-            statusEl.textContent = msg;
+            statusEl.innerHTML = msg;
         }
     };
-
     updateStatus();
 
     // ─── SMOOTH SCROLL ───
@@ -137,9 +179,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const id = section.getAttribute('id');
             if (scrollPos >= top && scrollPos < top + height) {
                 navItems.forEach(item => {
-                    item.style.color = '';
+                    item.classList.remove('nav-active');
                     if (item.getAttribute('href') === `#${id}`) {
-                        item.style.color = 'var(--white)';
+                        item.classList.add('nav-active');
                     }
                 });
             }
