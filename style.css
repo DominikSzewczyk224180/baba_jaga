@@ -36,14 +36,16 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none;transition
     pointer-events:none;z-index:0;
 }
 
-/* ═══ CHALK BACKGROUNDS - BIGGER & MORE VISIBLE ═══ */
+/* ═══ CHALK BACKGROUNDS - MEGA VISIBLE ═══ */
 .bg-chalk{position:absolute;pointer-events:none;z-index:0}
-.bg-chalk-1{right:-20px;bottom:0;width:380px;opacity:.12}
-.bg-chalk-2{left:30px;bottom:80px;width:240px;transform:rotate(15deg);opacity:.08}
-.bg-chalk-3{right:40px;top:40px;width:220px;opacity:.10}
-.bg-chalk-4{left:-10px;top:160px;width:320px;opacity:.10}
-.bg-chalk-5{right:0;bottom:100px;width:280px;opacity:.09}
-.bg-chalk-6{left:40px;bottom:80px;width:260px;opacity:.08;transform:rotate(-15deg)}
+.bg-chalk-1{right:-20px;bottom:-20px;width:500px;opacity:.18}
+.bg-chalk-2{left:10px;bottom:40px;width:320px;transform:rotate(15deg);opacity:.12}
+.bg-chalk-3{right:30px;top:30px;width:300px;opacity:.15}
+.bg-chalk-4{left:-30px;top:120px;width:420px;opacity:.14}
+.bg-chalk-5{right:-20px;bottom:80px;width:380px;opacity:.13}
+.bg-chalk-6{left:20px;bottom:60px;width:340px;opacity:.11;transform:rotate(-15deg)}
+.bg-chalk-7{right:60px;top:60px;width:280px;opacity:.10;transform:rotate(10deg)}
+.bg-chalk-8{left:50%;top:50%;width:350px;opacity:.08;transform:translate(-50%,-50%) rotate(-5deg)}
 
 /* ═══ SECTION TRANSITIONS - angled/wave dividers ═══ */
 .transition{position:relative;z-index:3;margin-top:-1px}
@@ -77,11 +79,11 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none;transition
 /* ═══ HERO ═══ */
 .hero{min-height:100vh;display:flex;align-items:center;background:var(--bg2)}
 .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:40px;max-width:1100px;margin:0 auto;padding:100px 24px 60px;width:100%}
-.hero-logo{max-width:460px;width:85%;margin-bottom:20px;filter:drop-shadow(0 4px 16px rgba(232,180,69,.15));animation:fadeRight 1s ease 2.8s both}
-.hero-label{font-size:.72rem;font-weight:700;letter-spacing:4px;color:var(--gold);margin-bottom:10px;animation:fadeUp .8s ease 3s both}
-.hero-loc{font-size:1rem;color:var(--tm);margin-bottom:28px;animation:fadeUp .8s ease 3.2s both}
-.hero-btns{display:flex;gap:12px;flex-wrap:wrap;animation:fadeUp .8s ease 3.4s both}
-.hero-pizza{width:100%;max-width:420px;border-radius:50%;animation:pizzaIn 1.2s cubic-bezier(.16,1,.3,1) 2.8s both,pizzaFloat 6s ease-in-out 4s infinite;filter:drop-shadow(0 16px 40px rgba(0,0,0,.5))}
+.hero-logo{max-width:520px;width:90%;margin-bottom:28px;filter:drop-shadow(0 4px 16px rgba(232,180,69,.15));animation:fadeRight 1s ease 2.8s both}
+.hero-label{font-size:.9rem;font-weight:700;letter-spacing:5px;color:var(--gold);margin-bottom:14px;animation:fadeUp .8s ease 3s both}
+.hero-loc{font-size:1.2rem;color:var(--tm);margin-bottom:32px;animation:fadeUp .8s ease 3.2s both}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .8s ease 3.4s both}
+.hero-pizza{width:100%;max-width:460px;border-radius:50%;animation:pizzaIn 1.2s cubic-bezier(.16,1,.3,1) 2.8s both,pizzaFloat 6s ease-in-out 4s infinite;filter:drop-shadow(0 16px 40px rgba(0,0,0,.5))}
 .hero-img{text-align:center}
 @keyframes fadeRight{from{opacity:0;transform:translateX(-40px)}to{opacity:1;transform:none}}
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
@@ -89,7 +91,7 @@ img{max-width:100%;display:block}a{color:inherit;text-decoration:none;transition
 @keyframes pizzaFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 
 /* ═══ BUTTONS ═══ */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:6px;font-size:.82rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;transition:.3s}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:16px 32px;border-radius:6px;font-size:.88rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;border:none;cursor:pointer;transition:.3s}
 .btn-gold{background:var(--gold);color:var(--bg2)}.btn-gold:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,180,69,.3)}
 .btn-outline{background:none;color:var(--t);border:1px solid rgba(255,255,255,.15)}.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
 .btn-fb{background:#1877F2;color:#fff}.btn-fb:hover{background:#1565d8;transform:translateY(-2px)}
